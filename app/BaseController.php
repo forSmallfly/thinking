@@ -4,6 +4,7 @@ declare (strict_types = 1);
 namespace app;
 
 use app\middleware\ParamValidate;
+use app\utils\ResponseTool;
 use think\App;
 
 /**
@@ -11,6 +12,8 @@ use think\App;
  */
 abstract class BaseController
 {
+    use ResponseTool;
+
     /**
      * Request实例
      * @var Request

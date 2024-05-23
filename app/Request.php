@@ -13,6 +13,13 @@ class Request extends \think\Request
     private array $params = [];
 
     /**
+     * 请求ID
+     *
+     * @var string
+     */
+    private string $requestId = '';
+
+    /**
      * 获取请求参数
      *
      * @return array
@@ -31,5 +38,44 @@ class Request extends \think\Request
     public function setParams(array $params): void
     {
         $this->params = $params;
+    }
+
+    /**
+     * 生成请求ID
+     *
+     * @return string
+     */
+    public function generateRequestId(): string
+    {
+        $chars = md5(uniqid((string)mt_rand(), true));
+
+        $requestId = substr($chars, 0, 8) . '-'
+            . substr($chars, 8, 4) . '-'
+            . substr($chars, 12, 4) . '-'
+            . substr($chars, 16, 4) . '-'
+            . substr($chars, 20, 12);
+
+        return strtoupper($requestId);
+    }
+
+    /**
+     * 获取请求ID
+     *
+     * @return string
+     */
+    public function getRequestId(): string
+    {
+        return $this->requestId;
+    }
+
+    /**
+     * 设置请求ID
+     *
+     * @param string $requestId
+     * @return void
+     */
+    public function setRequestId(string $requestId): void
+    {
+        $this->requestId = $requestId;
     }
 }
