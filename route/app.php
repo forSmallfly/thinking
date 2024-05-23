@@ -15,3 +15,6 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
+
+/*** miss路由 @see Error::miss() */
+Route::miss('Error/miss');
