@@ -36,8 +36,10 @@ return [
             'close'          => false,
             // 日志输出格式化
             'format'         => '[%s][%s] %s',
+            // 时间格式
+            'time_format'    => 'Y-m-d H:i:s',
             // 是否实时写入
-            'realtime_write' => false,
+            'realtime_write' => true,
         ],
         // 其它日志通道配置
     ],

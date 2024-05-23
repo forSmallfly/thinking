@@ -1,5 +1,7 @@
 <?php
 // 事件定义文件
+use app\listener\AddRequestLog;
+use app\listener\AddResponseLog;
 use app\listener\SetRequestId;
 
 return [
@@ -8,9 +10,12 @@ return [
     'listen'    => [
         'AppInit'  => [],
         'HttpRun'  => [
-            SetRequestId::class
+            SetRequestId::class,
+            AddRequestLog::class
         ],
-        'HttpEnd'  => [],
+        'HttpEnd'  => [
+            AddResponseLog::class
+        ],
         'LogLevel' => [],
         'LogWrite' => [],
     ],
