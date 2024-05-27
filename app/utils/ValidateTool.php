@@ -33,8 +33,8 @@ trait ValidateTool
      * @var array[]
      */
     private array $defaultAddFields = [
-        'page'      => ['require', 'integer', 'max' => MysqlAdapter::INT_DISPLAY_REGULAR],
-        'list_rows' => ['require', 'integer', 'max' => MysqlAdapter::INT_DISPLAY_REGULAR]
+        'page'      => ['integer', 'max' => MysqlAdapter::INT_DISPLAY_REGULAR],
+        'list_rows' => ['integer', 'max' => MysqlAdapter::INT_DISPLAY_REGULAR]
     ];
 
     /**

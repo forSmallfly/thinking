@@ -15,13 +15,13 @@ class Rule extends BaseValidate
      */
     protected $rule = [
         'id'        => ['require', 'integer', 'max' => 11],
-        'pid'       => ['require', 'integer', 'max' => 10],
-        'type'      => ['require', 'integer', 'max' => 3],
+        'pid'       => ['require', 'integer', 'max' => 11],
+        'type'      => ['require', 'integer', 'max' => 4],
         'name'      => ['require', 'max' => 50],
         'url'       => ['require', 'max' => 255],
-        'sort'      => ['require', 'integer', 'max' => 3],
-        'page'      => ['require', 'integer', 'max' => 11],
-        'list_rows' => ['require', 'integer', 'max' => 11]
+        'sort'      => ['require', 'integer', 'max' => 4],
+        'page'      => ['integer', 'max' => 11],
+        'list_rows' => ['integer', 'max' => 11]
     ];
 
     /**
@@ -36,21 +36,19 @@ class Rule extends BaseValidate
         'id.max'            => '数据标识长度最大为11',
         'pid.require'       => '上级ID必须',
         'pid.integer'       => '上级ID数据格式不正确',
-        'pid.max'           => '上级ID长度最大为10',
+        'pid.max'           => '上级ID长度最大为11',
         'type.require'      => '类型必须',
         'type.integer'      => '类型数据格式不正确',
-        'type.max'          => '类型长度最大为3',
+        'type.max'          => '类型长度最大为4',
         'name.require'      => '权限名称必须',
         'name.max'          => '权限名称长度最大为50',
         'url.require'       => '权限链接必须',
         'url.max'           => '权限链接长度最大为255',
         'sort.require'      => '排序必须',
         'sort.integer'      => '排序数据格式不正确',
-        'sort.max'          => '排序长度最大为3',
-        'page.require'      => '第几页必须',
+        'sort.max'          => '排序长度最大为4',
         'page.integer'      => '第几页数据格式不正确',
         'page.max'          => '第几页长度最大为11',
-        'list_rows.require' => '每页数据条数必须',
         'list_rows.integer' => '每页数据条数数据格式不正确',
         'list_rows.max'     => '每页数据条数长度最大为11'
     ];

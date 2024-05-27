@@ -20,9 +20,9 @@ class User extends BaseValidate
         'mobile'    => ['require', 'mobile'],
         'email'     => ['require', 'email'],
         'roles'     => ['require', 'max' => 255],
-        'status'    => ['require', 'integer', 'max' => 3],
-        'page'      => ['require', 'integer', 'max' => 11],
-        'list_rows' => ['require', 'integer', 'max' => 11]
+        'status'    => ['require', 'integer', 'max' => 4],
+        'page'      => ['integer', 'max' => 11],
+        'list_rows' => ['integer', 'max' => 11]
     ];
 
     /**
@@ -47,11 +47,9 @@ class User extends BaseValidate
         'roles.max'         => '角色集合长度最大为255',
         'status.require'    => '状态必须',
         'status.integer'    => '状态数据格式不正确',
-        'status.max'        => '状态长度最大为3',
-        'page.require'      => '第几页必须',
+        'status.max'        => '状态长度最大为4',
         'page.integer'      => '第几页数据格式不正确',
         'page.max'          => '第几页长度最大为11',
-        'list_rows.require' => '每页数据条数必须',
         'list_rows.integer' => '每页数据条数数据格式不正确',
         'list_rows.max'     => '每页数据条数长度最大为11'
     ];

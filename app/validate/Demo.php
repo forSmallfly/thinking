@@ -16,8 +16,8 @@ class Demo extends BaseValidate
     protected $rule = [
         'id'        => ['require', 'integer', 'max' => 11],
         'name'      => ['require', 'max' => 30],
-        'page'      => ['require', 'integer', 'max' => 11],
-        'list_rows' => ['require', 'integer', 'max' => 11]
+        'page'      => ['integer', 'max' => 11],
+        'list_rows' => ['integer', 'max' => 11]
     ];
 
     /**
@@ -32,10 +32,8 @@ class Demo extends BaseValidate
         'id.max'            => '数据标识长度最大为11',
         'name.require'      => '测试名称必须',
         'name.max'          => '测试名称长度最大为30',
-        'page.require'      => '第几页必须',
         'page.integer'      => '第几页数据格式不正确',
         'page.max'          => '第几页长度最大为11',
-        'list_rows.require' => '每页数据条数必须',
         'list_rows.integer' => '每页数据条数数据格式不正确',
         'list_rows.max'     => '每页数据条数长度最大为11'
     ];
