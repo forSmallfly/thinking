@@ -26,7 +26,7 @@ trait ResponseTool
             'data' => $data
         ];
 
-        $type = request()->type();
+        $type = $this->getReturnDataType();
         return match ($type) {
             'xml' => xml($result),
             default => json($result),
@@ -48,10 +48,20 @@ trait ResponseTool
             'msg'  => $msg
         ];
 
-        $type = request()->type();
+        $type = $this->getReturnDataType();
         return match ($type) {
             'xml' => xml($result),
             default => json($result),
         };
+    }
+
+    /**
+     * 获取API返回数据格式
+     *
+     * @return string
+     */
+    private function getReturnDataType(): string
+    {
+        return config('api.return_data_type', 'json');
     }
 }
