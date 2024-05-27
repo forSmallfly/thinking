@@ -6,6 +6,12 @@ namespace app;
 class Request extends \think\Request
 {
     /**
+     * 兼容PATH_INFO获取
+     * @var array
+     */
+    protected $pathinfoFetch = ['ORIG_PATH_INFO', 'REDIRECT_PATH_INFO', 'REDIRECT_URL', 'REQUEST_URI'];
+
+    /**
      * 请求参数
      *
      * @var array

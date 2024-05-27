@@ -27,6 +27,11 @@ class ParamValidate
     {
         // 获取验证类
         $validateClass = $this->getValidateClass($request);
+        // 空控制器不进行验证处理
+        if ($validateClass == 'app\validate\Error') {
+            return $next($request);
+        }
+
         if (!class_exists($validateClass)) {
             throw new ValidateNotFoundException($validateClass);
         }

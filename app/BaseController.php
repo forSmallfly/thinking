@@ -4,6 +4,7 @@ declare (strict_types = 1);
 namespace app;
 
 use app\middleware\ParamValidate;
+use app\utils\AuthTool;
 use app\utils\ResponseTool;
 use think\App;
 
@@ -13,6 +14,14 @@ use think\App;
 abstract class BaseController
 {
     use ResponseTool;
+    use AuthTool;
+
+    /**
+     * 用户ID
+     *
+     * @var int
+     */
+    protected int $uid;
 
     /**
      * Request实例
@@ -44,11 +53,15 @@ abstract class BaseController
         $this->app     = $app;
         $this->request = getRequest();
 
+        // 校验token
+        $this->uid = $this->checkToken();
+
         // 控制器初始化
         $this->initialize();
     }
 
     // 初始化
     protected function initialize()
-    {}
+    {
+    }
 }

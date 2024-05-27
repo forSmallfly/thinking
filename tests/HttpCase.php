@@ -14,7 +14,7 @@ class HttpCase extends TestCase
     /**
      * @var string
      */
-    protected string $token = '';
+    protected string $token = 'n4oVQj1/P3RqiJTZG5Tl4o+armZ163T6jpoIEkylBNVsQ9ZBWeDAf7xw3F46QnbvHYPWLNPSe11uq47Don2EJZAroLVAxs6wR/zikQ8AbI+6JdDIYoRBR1LakC08fIQew+QC4D/mEK5bO4YNQQF0+1qNl97vrAJUPpyiMoT5AOtF5gXm02/0xF+42zMbn1P/F8KCK5FwLJGiax05Ay7O0ybMp0+WOxsD98OB0d0aE+poJ8TPztNACB8FyWL3fa8OdyMBzQ4ft8rL5Kpzpag3aU5OkEf3kerq708g21A6YwU7yDN3WsuuwJl4JhpyPJy/HU0ufJvgAsHX+7n5j4vfmg==';
 
     /**
      * @return void

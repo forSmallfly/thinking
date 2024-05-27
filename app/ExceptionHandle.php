@@ -5,6 +5,8 @@ namespace app;
 use app\exceptions\EmptyControllerException;
 use app\exceptions\MissRouteException;
 use app\exceptions\ParamValidateException;
+use app\exceptions\UnauthorizedException;
+use app\exceptions\UnauthorizedOperationException;
 use app\utils\ResponseTool;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
@@ -78,6 +80,8 @@ class ExceptionHandle extends Handle
             if ($e instanceof EmptyControllerException
                 || $e instanceof MissRouteException
                 || $e instanceof ParamValidateException
+                || $e instanceof UnauthorizedException
+                || $e instanceof UnauthorizedOperationException
             ) {
                 return $this->fail($e->getCode(), $e->getMessage());
             }
