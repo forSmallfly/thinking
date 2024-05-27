@@ -18,7 +18,7 @@ class AddRequestLog
     public function handle(Request $request): void
     {
         if (app()->isDebug()) {
-            $msg = "[{requestId}] {method} {scheme}://{host}{url}\nparam：{data}";
+            $msg = "[{requestId}] {method} {scheme}://{host}{url}\nheader：{header}\nparam：{data}";
 
             $method = strtolower($request->method());
             Log::record($msg, LogLevel::INFO, [
@@ -27,6 +27,7 @@ class AddRequestLog
                 'scheme'    => $request->scheme(),
                 'host'      => $request->host() ?: 'localhost',
                 'url'       => $request->url(),
+                'header'    => var_export($request->header(), true),
                 'data'      => var_export($request->$method(), true)
             ]);
         }
