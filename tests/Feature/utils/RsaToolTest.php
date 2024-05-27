@@ -9,7 +9,7 @@ class RsaToolTest extends TestCase
 {
     use RsaTool;
 
-    public string $uid = '2';
+    public string $uid = '1';
 
     public function setUp(): void
     {
