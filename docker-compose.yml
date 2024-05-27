@@ -1,0 +1,26 @@
+version: '3'
+services:
+  swoole:
+    image: phpswoole/swoole:5.0.1-php8.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    restart: always
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+    restart: always
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    restart: always
